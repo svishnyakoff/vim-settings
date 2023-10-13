@@ -37,6 +37,30 @@ map <leader>p <Action>(SelectInProjectView)
 map <leader>l <Action>(FileStructurePopup)
 " Search by file name
 map <leader>o <Action>(GotoFile)
+" Reformat code
+map <leader>re <Action>(ReformatCode)
+" Activate terminal window
+map <leader>t <Action>(ActivateTerminalToolWindow)
+
+" Tempory disable because it is tedious to use and default webstorm key bind feel more comfortable
+"map <leader>vw <Action>(EditorSelectWord)
+"map <leader>vb <Action>(EditorUnSelectWord)
+
+map J <Action>(PreviousTab)
+map K <Action>(NextTab)
+
+map <leader>hp <Action>($LRU)
+map <leader>mt <Action>(PinActiveTab)
+
+"" Git actions
+map <leader>gg <Action>(VcsGroups)
+map <leader>gb <Action>(Git.Branches)
+map <leader>gd <Action>(Compare.SameVersion)
+map <leader>gk <Action>(CheckinProject)
+map <leader>gl <Action>(Vcs.Show.Log)
+
+"" Webstorm distraction modes
+map <leader>zz <Action>(ToggleDistractionFreeMode)
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat Code action
