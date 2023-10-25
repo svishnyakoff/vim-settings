@@ -33,56 +33,60 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 
 "" -- Open current editor file in project structure
-noremap <leader>p <Action>(SelectInProjectView)
+map <leader>p <Action>(SelectInProjectView)
 " Move cursor to project structure to file in the editor
-noremap <leader>l <Action>(FileStructurePopup)
+map <leader>l <Action>(FileStructurePopup)
 " Search by file name
-noremap <leader>o <Action>(GotoFile)
+map <leader>o <Action>(GotoFile)
 " Activate terminal window
-noremap <leader>t <Action>(ActivateTerminalToolWindow)
+map <leader>t <Action>(ActivateTerminalToolWindow)
 
-noremap J <Action>(PreviousTab)
-noremap K <Action>(NextTab)
+map J <Action>(PreviousTab)
+map K <Action>(NextTab)
 
-noremap <leader>jp <Action>($LRU)
-noremap <leader>je <Action>(ShowErrorDescription)
-noremap <leader>jt <Action>(QuickTypeDefinition)
-noremap <leader>jd <Action>(QuickJavaDoc)
-noremap <leader>ju <Action>(FindUsages)
-noremap <leader>jc <Action>(JumpToLastChange)
-noremap <leader>jj <Action>(MethodDown)
-noremap <leader>jk <Action>(MethodUp)
+map <leader>rr <Action>(RenameElement)
+map <leader>ri <Action>(OptimizeImports)
+map <leader>jp <Action>($LRU)
+map <leader>je <Action>(ShowErrorDescription)
+map <leader>jt <Action>(QuickTypeDefinition)
+map <leader>jd <Action>(QuickJavaDoc)
+map <leader>ju <Action>(FindUsages)
+map <leader>jc <Action>(JumpToLastChange)
+map <leader>jj <Action>(MethodDown)
+map <leader>jk <Action>(MethodUp)
 
-noremap <leader>n <Action>(GotoNextElementUnderCaretUsage)
-noremap <leader>b <Action>(GotoPrevElementUnderCaretUsage)
+map <leader>n <Action>(GotoNextElementUnderCaretUsage)
+map <leader>b <Action>(GotoPrevElementUnderCaretUsage)
 ""map <leader>jh <Action>(Back)
 ""map <leader>jl <Action>(Forward)
 "" Pin active editor tab
-noremap <leader>mt <Action>(PinActiveTab)
+map <leader>mt <Action>(PinActiveTab)
 
 "" Git actions
-noremap <leader>gg <Action>(VcsGroups)
-noremap <leader>gb <Action>(Git.Branches)
-noremap <leader>gd <Action>(Compare.SameVersion)
-noremap <leader>gk <Action>(CheckinProject)
-noremap <leader>gl <Action>(Vcs.Show.Log)
+map <leader>gg <Action>(VcsGroups)
+map <leader>gb <Action>(Git.Branches)
+map <leader>gd <Action>(Compare.SameVersion)
+map <leader>gk <Action>(CheckinProject)
+map <leader>gl <Action>(Vcs.Show.Log)
 
-noremap <leader>rr <Action>(RenameElement)
-noremap <leader>ri <Action>(OptimizeImports)
-noremap <leader>re <Action>(ReformatCode)
+map <leader>rr <Action>(RenameElement)
+map <leader>ri <Action>(OptimizeImports)
+map <leader>re <Action>(ReformatCode)
 
-noremap <leader>w <Action>(MethodDown)
-noremap <leader>b <Action>(MethodUp)
+map <leader>w <Action>(MethodDown)
+map <leader>b <Action>(MethodUp)
 
 "" Shortcuts for folding
-noremap <leader>fa1 <Action>(ExpandAllToLevel1)
-noremap <leader>fa2 <Action>(ExpandAllToLevel2)
-noremap <leader>fj <Action>(ExpandRegion)
-noremap <leader>fk <Action>(CollapseRegion)
-noremap <leader>faj <Action>(ExpandAllRegions)
+map <leader>fa1 <Action>(ExpandAllToLevel1)
+map <leader>fa2 <Action>(ExpandAllToLevel2)
+map <leader>fj <Action>(ExpandRegion)
+map <leader>fk <Action>(CollapseRegion)
+map <leader>faj <Action>(ExpandAllRegions)
 
 "" Webstorm distraction modes
-noremap <leader>zz <Action>(ToggleDistractionFreeMode)
+map <leader>zz <Action>(ToggleDistractionFreeMode)
+
+noremap ' `
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat Code action
