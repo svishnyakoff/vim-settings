@@ -16,6 +16,7 @@ set scrolloff=5
 " Do incremental searching.
 set incsearch
 set NERDTree
+set ignorecase smartcase
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
@@ -32,35 +33,56 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 
 "" -- Open current editor file in project structure
-map <leader>p <Action>(SelectInProjectView)
+noremap <leader>p <Action>(SelectInProjectView)
 " Move cursor to project structure to file in the editor
-map <leader>l <Action>(FileStructurePopup)
+noremap <leader>l <Action>(FileStructurePopup)
 " Search by file name
-map <leader>o <Action>(GotoFile)
-" Reformat code
-map <leader>re <Action>(ReformatCode)
+noremap <leader>o <Action>(GotoFile)
 " Activate terminal window
-map <leader>t <Action>(ActivateTerminalToolWindow)
+noremap <leader>t <Action>(ActivateTerminalToolWindow)
 
-" Tempory disable because it is tedious to use and default webstorm key bind feel more comfortable
-"map <leader>vw <Action>(EditorSelectWord)
-"map <leader>vb <Action>(EditorUnSelectWord)
+noremap J <Action>(PreviousTab)
+noremap K <Action>(NextTab)
 
-map J <Action>(PreviousTab)
-map K <Action>(NextTab)
+noremap <leader>jp <Action>($LRU)
+noremap <leader>je <Action>(ShowErrorDescription)
+noremap <leader>jt <Action>(QuickTypeDefinition)
+noremap <leader>jd <Action>(QuickJavaDoc)
+noremap <leader>ju <Action>(FindUsages)
+noremap <leader>jc <Action>(JumpToLastChange)
+noremap <leader>jj <Action>(MethodDown)
+noremap <leader>jk <Action>(MethodUp)
 
-map <leader>hp <Action>($LRU)
-map <leader>mt <Action>(PinActiveTab)
+noremap <leader>n <Action>(GotoNextElementUnderCaretUsage)
+noremap <leader>b <Action>(GotoPrevElementUnderCaretUsage)
+""map <leader>jh <Action>(Back)
+""map <leader>jl <Action>(Forward)
+"" Pin active editor tab
+noremap <leader>mt <Action>(PinActiveTab)
 
 "" Git actions
-map <leader>gg <Action>(VcsGroups)
-map <leader>gb <Action>(Git.Branches)
-map <leader>gd <Action>(Compare.SameVersion)
-map <leader>gk <Action>(CheckinProject)
-map <leader>gl <Action>(Vcs.Show.Log)
+noremap <leader>gg <Action>(VcsGroups)
+noremap <leader>gb <Action>(Git.Branches)
+noremap <leader>gd <Action>(Compare.SameVersion)
+noremap <leader>gk <Action>(CheckinProject)
+noremap <leader>gl <Action>(Vcs.Show.Log)
+
+noremap <leader>rr <Action>(RenameElement)
+noremap <leader>ri <Action>(OptimizeImports)
+noremap <leader>re <Action>(ReformatCode)
+
+noremap <leader>w <Action>(MethodDown)
+noremap <leader>b <Action>(MethodUp)
+
+"" Shortcuts for folding
+noremap <leader>fa1 <Action>(ExpandAllToLevel1)
+noremap <leader>fa2 <Action>(ExpandAllToLevel2)
+noremap <leader>fj <Action>(ExpandRegion)
+noremap <leader>fk <Action>(CollapseRegion)
+noremap <leader>faj <Action>(ExpandAllRegions)
 
 "" Webstorm distraction modes
-map <leader>zz <Action>(ToggleDistractionFreeMode)
+noremap <leader>zz <Action>(ToggleDistractionFreeMode)
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat Code action
