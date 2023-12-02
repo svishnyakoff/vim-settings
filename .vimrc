@@ -1,3 +1,6 @@
+set wildmenu
+set wildmode=full
+set history=200
 set laststatus=2
 set number relativenumber
 let mapleader = "\<Space>"
