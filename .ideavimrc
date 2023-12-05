@@ -11,28 +11,24 @@ source ~/.vimrc
 " text scroll if you mouse-click near the start or end of the window.
 set scrolloff=5
 
-" Do incremental searching.
+" Common settings
 set incsearch
 set NERDTree
 set ignorecase smartcase
 set easymotion
 set ideajoin
 set showmode
-
-" Don't use Ex mode, use Q for formatting.
-map Q gq
-
-" Scroll the screen using 10 lines intervals
-nnoremap <C-u> 10<C-y>
-nnoremap <C-d> 10<C-e>
-
-" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
-
-nmap <c-J> <Action>(EditorJoinLines)
+set clipboard=unnamedplus
 
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 Plug 'vim-scripts/ReplaceWithRegister'
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+nmap <c-J> <Action>(EditorJoinLines)
 
 nmap <leader>ev :vsplit ~/.ideavimrc<CR>
 "" -- Open current editor file in project structure
@@ -60,7 +56,7 @@ nmap <leader>jk <Action>(MethodUp)
 nmap <leader>o <Action>(GotoFile)
 " Mapping to prepare a line for an input or clear from input
 nnoremap <leader>OO ddO<space><esc>
-nnoremap <leader>OI ddO
+nnoremap cc ddO
 
 nmap <leader>n <Action>(FindWordAtCaret)
 
@@ -76,7 +72,7 @@ nmap <leader>gk <Action>(CheckinProject)
 nmap <leader>gl <Action>(Vcs.Show.Local.Changes)
 nmap <leader>gh <Action>(Vcs.Show.Log)
 nmap <leader>gp <Action>(Vcs.Push)
-nnoremap gco :!git checkout
+nmap <leader>gr <Action>(Github.Create.Pull.Request)
 
 nmap <leader>rr <Action>(RenameElement)
 nmap <leader>ri <Action>(OptimizeImports)
@@ -101,10 +97,6 @@ nmap <leader>xs <Action>(Stop)
 nmap <leader>xr <Action>(Rerun)
 nmap <leader>x<space> <Action>(Resume)
 
-"" Allow for removing from current position to either start or end of a line
-noremap cL c$
-noremap cH c0
-
 " I have tried to added operator pending mapping following the examples at https://learnvimscriptthehardway.stevelosh.com/chapters/15.html
 "onoremap inp :<c-u>normal! f(vi(<cr>
 " It did not work, may be normal mode is not properly supported.
@@ -114,12 +106,3 @@ nnoremap cinp f(vi)di
 nmap <leader>afj <Action>(NewJavaScriptFile)
 "" Allows to navigate through the document using "f" search capabilities of easymotion-s
 nmap s <Plug>(easymotion-s)
-"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
-"" Map \r to the Reformat Code action
-"map \r <Action>(ReformatCode)
-
-"" Map <leader>d to start debug
-"map <leader>d <Action>(Debug)
-
-"" Map \b to toggle the breakpoint on the current line
-"map \b <Action>(ToggleLineBreakpoint)
