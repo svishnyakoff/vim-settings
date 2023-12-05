@@ -1,3 +1,4 @@
+print "test"
 set wildmenu
 set wildmode=full
 set history=200
