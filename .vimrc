@@ -2,6 +2,9 @@ let mapleader = "\<Space>"
 let g:highlightedyank_highlight_duration = 500
 
 " ============== Custom options ===================
+set wildmenu
+set wildmode=full
+set history=200
 set laststatus=2
 set number relativenumber
 
