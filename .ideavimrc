@@ -18,7 +18,7 @@ set ignorecase smartcase
 set easymotion
 set ideajoin
 set showmode
-set clipboard=unnamedplus
+set clipboard+=ideaput
 
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
@@ -52,17 +52,12 @@ nmap <leader>jc <Action>(JumpToLastChange)
 nmap <leader>jj <Action>(MethodDown)
 nmap <leader>jk <Action>(MethodUp)
 
-
 nmap <leader>o <Action>(GotoFile)
 " Mapping to prepare a line for an input or clear from input
 nnoremap <leader>OO ddO<space><esc>
 nnoremap cc ddO
 
 nmap <leader>n <Action>(FindWordAtCaret)
-
-"" Pin active editor tab
-"" NOTE: don't actually use it actively.
-nmap <leader>mt <Action>(PinActiveTab)
 
 "" Git actions
 nmap <leader>gg <Action>(VcsGroups)

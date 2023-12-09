@@ -8,6 +8,8 @@ set wildmode=full
 set history=200
 set laststatus=2
 set number relativenumber
+set clipboard=unnamedplus
+set ignorecase smartcase
 
 " ============== Custom mapppings ===================
 inoremap jk <esc>
@@ -20,6 +22,9 @@ nmap s <Plug>(easymotion-s)
 
 nmap H b
 nmap L w
+
+" Allows to use %% to refer to dir name of an active buffer
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 call plug#begin()
 Plug 'itchyny/lightline.vim'
