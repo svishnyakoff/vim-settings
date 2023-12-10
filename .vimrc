@@ -2,6 +2,7 @@ let mapleader = "\<Space>"
 let g:highlightedyank_highlight_duration = 500
 
 " ============== Custom options ===================
+set incsearch
 set mouse=a
 set wildmenu
 set wildmode=full
