@@ -12,6 +12,7 @@ source ~/.vimrc
 set scrolloff=5
 
 " Common settings
+set idearefactormode=keep
 set incsearch
 set NERDTree
 set ignorecase smartcase
@@ -69,9 +70,12 @@ nmap <leader>gh <Action>(Vcs.Show.Log)
 nmap <leader>gp <Action>(Vcs.Push)
 nmap <leader>gr <Action>(Github.Create.Pull.Request)
 
+"" Refactor mappings
 nmap <leader>rr <Action>(RenameElement)
 nmap <leader>ri <Action>(OptimizeImports)
 nmap <leader>re <Action>(ReformatCode)
+nmap <leader>rt <Action>(Refactorings.QuickListPopupAction)
+vmap <leader>rt <Action>(Refactorings.QuickListPopupAction)
 
 "" Shortcuts for folding
 nmap <leader>fa1 <Action>(ExpandAllToLevel1)
