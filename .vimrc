@@ -9,7 +9,7 @@ set wildmode=full
 set history=200
 set laststatus=2
 set number relativenumber
-set clipboard=unnamedplus
+set clipboard=unnamed
 set ignorecase smartcase
 
 " ============== Custom mapppings ===================
@@ -18,6 +18,10 @@ inoremap jk <esc>
 " Scroll the screen using 10 lines intervals
 nnoremap <C-u> 10<C-y>
 nnoremap <C-d> 10<C-e>
+
+" Mapping to execute bash commands and print output below
+nnoremap <leader>xe yypV!bash
+vnoremap <leader>xe yPgv:!bash
 
 nmap s <Plug>(easymotion-s)
 
