@@ -21,7 +21,7 @@ nnoremap <C-d> 10<C-e>
 
 " Mapping to execute bash commands and print output below
 nnoremap <leader>xe yypV!bash
-vnoremap <leader>xe yPgv:!bash
+vnoremap <leader>xe yPgv!bash
 
 nmap s <Plug>(easymotion-s)
 
