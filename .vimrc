@@ -1,6 +1,8 @@
 let mapleader = "\<Space>"
 let g:highlightedyank_highlight_duration = 500
 
+filetype plugin indent on
+
 " ============== Custom options ===================
 set incsearch
 set mouse=a
@@ -11,6 +13,7 @@ set laststatus=2
 set number relativenumber
 set clipboard=unnamed
 set ignorecase smartcase
+set nocompatible
 
 " ============== Custom mapppings ===================
 inoremap jk <esc>
