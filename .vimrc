@@ -40,4 +40,5 @@ Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'machakann/vim-highlightedyank'
+Plug 'nelstrom/vim-visual-star-search'
 call plug#end()
