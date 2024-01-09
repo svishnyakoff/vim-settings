@@ -5,6 +5,7 @@ filetype plugin indent on
 
 " ============== Custom options ===================
 set incsearch
+set hidden
 set mouse=a
 set wildmenu
 set wildmode=full
