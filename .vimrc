@@ -4,6 +4,12 @@ let g:highlightedyank_highlight_duration = 500
 filetype plugin indent on
 
 " ============== Custom options ===================
+
+" Ensures that indentation made using <> commands always has width that is
+" multiple of 'shiftwidth'
+" https://vimtricks.com/p/ensuring-aligned-indentation/#:~:text=With%20%3Aset%20shiftround%20enabled%2C%20Vim,the%20next%20multiple%20of%20shiftwidth
+set shiftround
+set wrap
 set incsearch
 set hidden
 set mouse=a
@@ -26,6 +32,11 @@ nnoremap <C-d> 10<C-e>
 " Mapping to execute bash commands and print output below
 nnoremap <leader>xe yypV!bash
 vnoremap <leader>xe yPgv!bash
+
+" Allows to UPPERCASE words in 'normal' and 'insert' modes
+" https://learnvimscriptthehardway.stevelosh.com/chapters/04.html
+inoremap <c-u> <esc>viWUgi
+nnoremap <c-u> viWU
 
 nmap s <Plug>(easymotion-s)
 
