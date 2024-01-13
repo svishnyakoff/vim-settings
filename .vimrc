@@ -1,4 +1,5 @@
-let mapleader = "\<Space>"
+let mapleader = "\<space>"
+let maplocalleader = "\\"
 let g:highlightedyank_highlight_duration = 500
 
 filetype plugin indent on
@@ -35,8 +36,8 @@ vnoremap <leader>xe yPgv!bash
 
 " Allows to UPPERCASE words in 'normal' and 'insert' modes
 " https://learnvimscriptthehardway.stevelosh.com/chapters/04.html
-inoremap <c-u> <esc>viWUgi
-nnoremap <c-u> viWU
+inoremap <localleader><c-u> <esc>viWUgi
+nnoremap <localleader><c-u> viWU
 
 nmap s <Plug>(easymotion-s)
 
