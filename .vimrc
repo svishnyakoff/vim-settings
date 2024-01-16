@@ -10,6 +10,11 @@ filetype plugin indent on
 " multiple of 'shiftwidth'
 " https://vimtricks.com/p/ensuring-aligned-indentation/#:~:text=With%20%3Aset%20shiftround%20enabled%2C%20Vim,the%20next%20multiple%20of%20shiftwidth
 set shiftround
+
+" Briefly focus on matching paranthesis while typing 
+set showmatch
+set matchtime=1
+
 set wrap
 set incsearch
 set hidden
@@ -22,6 +27,7 @@ set number relativenumber
 set clipboard=unnamed
 set ignorecase smartcase
 set nocompatible
+
 
 " ============== Custom mapppings ===================
 inoremap jk <esc>
@@ -41,12 +47,22 @@ nnoremap <localleader><c-u> viWU
 
 nmap s <Plug>(easymotion-s)
 
-nmap H b
-nmap L w
+nnoremap H b
+nnoremap L w
+
+" Quickly open .vimrc for editing, e.g to add new mapping. Two mappings, one
+" to open and modify; and other to source and activate changes
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Wraps selection in double quotes
+vnoremap a" <esc>`>a"<esc>`<i"<esc>
 
 " Allows to use %% to refer to dir name of an active buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
+
+" ============== Vim plugins ===================
 call plug#begin()
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
@@ -55,3 +71,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'machakann/vim-highlightedyank'
 Plug 'nelstrom/vim-visual-star-search'
 call plug#end()
+
+
+" ============== Abbreviation  ===================
+iabbrev vimhead " ============== Header ===================
+iabbrev mk =
+
