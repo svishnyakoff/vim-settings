@@ -77,3 +77,14 @@ call plug#end()
 iabbrev vimhead " ============== Header ===================
 iabbrev mk =
 
+
+" ============== Autocommands  ===================	
+augroup shellgroup
+    autocmd!
+    autocmd FileType sh nnoremap <buffer> <localleader>c I#<esc>
+    autocmd FileType sh setlocal shiftwidth=4
+augroup END
+
+augroup javagroup
+    autocmd FileType java iabbrev <buffer> iff if ()<left>ci)
+augroup END
