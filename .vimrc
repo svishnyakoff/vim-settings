@@ -10,6 +10,9 @@ filetype plugin indent on
 " multiple of 'shiftwidth'
 " https://vimtricks.com/p/ensuring-aligned-indentation/#:~:text=With%20%3Aset%20shiftround%20enabled%2C%20Vim,the%20next%20multiple%20of%20shiftwidth
 set shiftround
+set shiftwidth=4
+set tabstop=4 
+set expandtab
 
 " Briefly focus on matching paranthesis while typing 
 set showmatch
@@ -61,6 +64,13 @@ vnoremap a" <esc>`>a"<esc>`<i"<esc>
 " Allows to use %% to refer to dir name of an active buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
+" Work on text object inside next or previous paranthesis
+onoremap in( :<c-u>normal! f(vi)<cr>
+onoremap il( :<c-u>normal! F)vi)<cr>
+onoremap an( :<c-u>normal! f(v%<cr>
+onoremap al( :<c-u>normal! F)v%<cr>
+onoremap in{ :<c-u>normal! f{vi{<cr>
+onoremap il{ :<c-u>normal! F}vi{<cr>
 
 " ============== Vim plugins ===================
 call plug#begin()
@@ -82,9 +92,15 @@ iabbrev mk =
 augroup shellgroup
     autocmd!
     autocmd FileType sh nnoremap <buffer> <localleader>c I#<esc>
-    autocmd FileType sh setlocal shiftwidth=4
 augroup END
 
 augroup javagroup
-    autocmd FileType java iabbrev <buffer> iff if ()<left>ci)
+	autocmd!
+    autocmd FileType java iabbrev <buffer> iff if ()<left>
 augroup END
+
+augroup markdowngroup
+	autocmd!
+	autocmd FileType markdown onoremap ih :<c-u>execute "normal! ?^[=-]\\{2,}$\rkvg_"<cr>
+	autocmd FileType markdown onoremap ah :<c-u>execute "normal! ?^[=-]\\{2,}$\rg_vk0"<cr>
+augroup end
