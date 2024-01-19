@@ -4,8 +4,7 @@ let g:highlightedyank_highlight_duration = 500
 
 filetype plugin indent on
 
-" ============== Custom options ===================
-
+" ============== Custom options ==================={{{
 " Ensures that indentation made using <> commands always has width that is
 " multiple of 'shiftwidth'
 " https://vimtricks.com/p/ensuring-aligned-indentation/#:~:text=With%20%3Aset%20shiftround%20enabled%2C%20Vim,the%20next%20multiple%20of%20shiftwidth
@@ -30,10 +29,14 @@ set number relativenumber
 set clipboard=unnamed
 set ignorecase smartcase
 set nocompatible
+" Vim mode is already displayed in the status line
+set noshowmode
+" When buffer is opened, folding starting with 1st level are closed
+set foldlevelstart=1
+"}}}
 
-
-" ============== Custom mapppings ===================
-inoremap jk <esc>
+" ============== Custom mapppings ==================={{{
+inoremap jk <esc>"
 
 " Scroll the screen using 10 lines intervals
 nnoremap <C-u> 10<C-y>
@@ -71,9 +74,10 @@ onoremap an( :<c-u>normal! f(v%<cr>
 onoremap al( :<c-u>normal! F)v%<cr>
 onoremap in{ :<c-u>normal! f{vi{<cr>
 onoremap il{ :<c-u>normal! F}vi{<cr>
+"}}}
 
-" ============== Vim plugins ===================
-call plug#begin()
+" ============== Vim plugins ==================={{{
+call plug#begin()"
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
@@ -81,14 +85,18 @@ Plug 'easymotion/vim-easymotion'
 Plug 'machakann/vim-highlightedyank'
 Plug 'nelstrom/vim-visual-star-search'
 call plug#end()
+" }}}
 
-
-" ============== Abbreviation  ===================
+" ============== Abbreviation  ==================={{{
 iabbrev vimhead " ============== Header ===================
 iabbrev mk =
+" }}}
 
-
-" ============== Autocommands  ===================	
+" ============== Autocommands  ===================	{{{
+augroup vimgroup
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
 augroup shellgroup
     autocmd!
     autocmd FileType sh nnoremap <buffer> <localleader>c I#<esc>
@@ -104,3 +112,4 @@ augroup markdowngroup
 	autocmd FileType markdown onoremap ih :<c-u>execute "normal! ?^[=-]\\{2,}$\rkvg_"<cr>
 	autocmd FileType markdown onoremap ah :<c-u>execute "normal! ?^[=-]\\{2,}$\rg_vk0"<cr>
 augroup end
+" }}}
