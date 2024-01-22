@@ -29,7 +29,7 @@ set number relativenumber
 set clipboard=unnamed
 set ignorecase smartcase
 set nocompatible
-" Vim mode is already displayed in the status line
+" Vm mode is already displayed in the status line
 set noshowmode
 " When buffer is opened, folding starting with 1st level are closed
 set foldlevelstart=1
@@ -58,7 +58,7 @@ nnoremap L w
 
 " Quickly open .vimrc for editing, e.g to add new mapping. Two mappings, one
 " to open and modify; and other to source and activate changes
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>ev :rightbelow vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Wraps selection in double quotes
