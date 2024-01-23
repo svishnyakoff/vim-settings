@@ -113,3 +113,13 @@ augroup markdowngroup
 	autocmd FileType markdown onoremap ah :<c-u>execute "normal! ?^[=-]\\{2,}$\rg_vk0"<cr>
 augroup end
 " }}}
+
+" ============== Learning vim the hard way =================== {{{
+
+" Mapping for highlignting trailing spaces
+nnoremap <leader>w :match Error /\v\s+$/<CR>
+nnoremap <leader>W :match<CR>
+
+nnoremap <leader>g :grep -G <cword> .<cr>
+
+"}}}
