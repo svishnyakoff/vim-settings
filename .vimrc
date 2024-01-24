@@ -95,6 +95,7 @@ iabbrev mk =
 " ============== Autocommands  ===================	{{{
 augroup vimgroup
     autocmd!
+    autocmd FileType vim nnoremap <buffer> <localleader>c I" <esc>
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
 augroup shellgroup
@@ -120,6 +121,6 @@ augroup end
 nnoremap <leader>w :match Error /\v\s+$/<CR>
 nnoremap <leader>W :match<CR>
 
-nnoremap <leader>g :grep -G <cword> .<cr>
+" nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
 
 "}}}
