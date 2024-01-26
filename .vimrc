@@ -13,6 +13,9 @@ set shiftwidth=4
 set tabstop=4 
 set expandtab
 
+" Open split always on a right side
+set splitright
+
 " Briefly focus on matching paranthesis while typing 
 set showmatch
 set matchtime=1
@@ -32,7 +35,7 @@ set nocompatible
 " Vm mode is already displayed in the status line
 set noshowmode
 " When buffer is opened, folding starting with 1st level are closed
-set foldlevelstart=1
+set foldlevelstart=0
 "}}}
 
 " ============== Custom mapppings ==================={{{
@@ -74,6 +77,12 @@ onoremap an( :<c-u>normal! f(v%<cr>
 onoremap al( :<c-u>normal! F)v%<cr>
 onoremap in{ :<c-u>normal! f{vi{<cr>
 onoremap il{ :<c-u>normal! F}vi{<cr>
+
+" There is another mapping undocummented here coming from "plugins" directory
+" for following:
+" nnoremap <leader>g - searches selection using grep
+" vnoremap <leader>g - searches selected text using grep  
+
 "}}}
 
 " ============== Vim plugins ==================={{{
