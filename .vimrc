@@ -13,7 +13,6 @@ set shiftwidth=4
 set tabstop=4 
 set expandtab
 
-" Open split always on a right side
 set splitright
 
 " Briefly focus on matching paranthesis while typing 
@@ -77,6 +76,8 @@ onoremap an( :<c-u>normal! f(v%<cr>
 onoremap al( :<c-u>normal! F)v%<cr>
 onoremap in{ :<c-u>normal! f{vi{<cr>
 onoremap il{ :<c-u>normal! F}vi{<cr>
+
+nnoremap <leader>h :h<space>
 
 " There is another mapping undocummented here coming from "plugins" directory
 " for following:
